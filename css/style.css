@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* base rule  */
 
@@ -59,7 +59,37 @@ li {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.grid-three--cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four--cols {
+  grid-template-columns: repeat(4, 1fr);
+}
 /* modules and reusable  */
+
+.section-common-heading {
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.section-common-subheading {
+  color: var(--heading-color);
+}
+
+.section-common--title {
+  font-size: 2rem;
+  margin: 2rem 0 1.2rem 0;
+}
+
+.fa-solid {
+  padding: 2.4rem;
+  background-color: var(--supporting-color);
+  color: var(--hero-heading-color);
+  font-size: 2.4rem;
+  border-radius: 50%;
+}
 
 .btn {
   display: inline-block;
@@ -127,7 +157,7 @@ li {
 
 :root {
   --main-color: #0062ff;
-  --supporting-color: #ebf3fe;
+  --supporting-color: #d3e3fa;
   --font-color: #424242;
   --bg-color: #ffffff;
   --heading-color: #000a19;
@@ -176,13 +206,13 @@ main {
     font-weight: 900;
   }
 
-  & .hero-para{
+  & .hero-para {
     color: var(--white-color);
     margin: 2rem 0 4.2rem 0;
   }
 }
 
-.section-hero-image img {
+.section-hero--image img {
   width: 100%;
   height: auto;
   transform: scaleX(-1);
@@ -207,7 +237,168 @@ main {
 }
 
 .custom-shape-divider-bottom-1752927838 .shape-fill {
-  fill: #FFFFFF;
+  fill: #ffffff;
 }
 
 /* hero Section End */
+
+/* start about section */
+.section-about .grid {
+  gap: 6.4rem;
+}
+
+.section-about .about-div {
+  text-align: center;
+}
+
+.section-about img {
+  padding: 2.4rem;
+  background-color: var(--supporting-color);
+  width: 15rem;
+  height: auto;
+  border-radius: 50%;
+  transition: all 0.3s linear;
+}
+
+.about-div .icon img:hover {
+  transform: rotate(360deg);
+  background: linear-gradient(to right, #0575e6, #021b79);
+}
+/* end about section */
+
+/* start course section  */
+
+.section-course .grid {
+  gap: 3.2rem;
+}
+
+.section-course .course-div {
+  padding: 3.2rem;
+}
+
+.section-course .course-div:hover {
+  box-shadow: var(--btn-box-shadow);
+}
+
+.course-div:nth-child(2) .icon .fa-solid {
+  color: #68bf9b;
+  background-color: #e7f6ef;
+}
+
+.course-div:nth-child(3) .icon .fa-solid {
+  color: #ff8b52;
+  background-color: #fbebe8;
+}
+
+.course-div:nth-child(4) .icon .fa-solid {
+  color: #183d3d;
+  background-color: #ccf7f7;
+}
+
+.course-div:nth-child(5) .icon .fa-solid {
+  color: #d988b9;
+  background-color: rgb(247, 223, 238);
+}
+
+.course-div:nth-child(6) .icon .fa-solid {
+  color: #ff9b50;
+  background-color: #f6dfce;
+}
+
+.course-div:nth-child(7) .icon .fa-solid {
+  color: #1450a3;
+  background-color: #dce9fa;
+}
+/* end  course section  */
+
+/* Start why choose section  */
+
+.section-why--choose .grid {
+  gap: 9.6rem;
+}
+
+.why-choose--div {
+  margin-top: 3.2rem;
+}
+
+.section-why--choose .text-align--right .why-choose--div {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: end;
+  text-align: right;
+}
+
+.common-text--highlight {
+  width: 6rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--supporting-color);
+  color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.choose-center--div figure {
+  width: 90%;
+  height: auto;
+}
+
+.choose-center--div,
+figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.choose-center--div figure::before, .choose-center--div figure::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--main-color);
+  width: 65rem;
+  /* aspect-ratio: 1; */
+  height: 60rem;
+  border-radius:50% ;
+  z-index: -1;
+}
+
+.choose-center--div figure::before{
+  animation: circle 5s linear infinite ;
+}
+
+@keyframes circle {
+  0% {
+    background-color: #b3d0ff;
+  }
+  25% {
+    background-color: #80b1ff;
+  }
+  50% {
+    background-color: #4d91ff;
+  }
+  75% {
+    background-color: #99c0ff;
+  }
+  100% {
+    background-color: #3381ff;
+  }
+}
+
+.choose-center--div figure::after{
+  width: 70rem;
+  height: 65rem;
+  /* aspect-ratio: 1; */
+  background-color:transparent;
+  z-index: -2;
+  border: 0.5rem solid var(--supporting-color);
+}
+
+
+/* End why choose section  */
